@@ -1,0 +1,25 @@
+type Member {
+    id: Int
+    account:String,
+    name:String,   
+    password:String,    
+
+}
+
+type Query{
+    memberQuery(page:Int,size:Int, name:String):[Member] 
+    meQuery:Member
+    }
+type Mutation{
+     memberLogin(account:String!,password:String):Member 
+     memberLogout:status
+}
+
+type status{
+    status: Int
+    message: String
+}
+
+type Authpayload {token: String}
+
+ 
