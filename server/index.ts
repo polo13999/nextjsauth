@@ -10,8 +10,6 @@ import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import "reflect-metadata"
 
-console.log('ok');
-
 const main = () => {
 
     const app = express()
@@ -20,11 +18,12 @@ const main = () => {
     app.use(cookieParser())
 
     const server = new ApolloServer({
-        schema: genSchema(),
-        uploads: { maxFileSize: 10000000, maxFiles: 20 },
+        schema: genSchema(), uploads: { maxFileSize: 10000000, maxFiles: 20 },
         context: async ({ req }: { req: any }) => {
-            const { tokenInfo }: any = await jwtwork(req);
-            return { tokenInfo, req }
+            const tokenInfo = await jwtwork(req);
+            //     console.log('-------->tokenInfo', tokenInfo);
+
+            return { ...tokenInfo, req }
         },
         tracing: true,
         debug: !process.env.PRODUCTION,
@@ -38,10 +37,10 @@ const main = () => {
     server.applyMiddleware({ app, cors: { credentials: true, origin }, })
 
     const httpServer = http.createServer(app);
-    httpServer.listen({ port: 4008 }, () => {
-        console.log(`🚀 GraphQl Server at 開發環境 is    http://localhost:4008${server.graphqlPath}`);
+    httpServer.listen({ port: 5002 }, () => {
+        console.log(`🚀 GraphQl Server at 開發環境 is    http://localhost:5002${server.graphqlPath}`);
     })
 
 }
 
-try { main() } catch (err) { console.log('err'); }
+try { main() } catch (err) { console.log('err', err); }

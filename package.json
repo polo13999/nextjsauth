@@ -1,0 +1,20 @@
+{
+  "name": "nextjsauth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app": "cd app && yarn dev",
+    "server": "cd server && yarn server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polo13999/nextjsauth.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polo13999/nextjsauth/issues"
+  },
+  "homepage": "https://github.com/polo13999/nextjsauth#readme"
+}

@@ -11,8 +11,8 @@ type Query{
     meQuery:Member
     }
 type Mutation{
-     memberLogin(account:String!,password:String):Member 
-     memberLogout:status
+     loginAction(account:String,password:String):Member 
+     logoutAction:status
 }
 
 type status{

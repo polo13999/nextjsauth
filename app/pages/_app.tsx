@@ -7,8 +7,6 @@ import { ApolloProvider } from 'react-apollo'
 import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks'
 import withApollo from '../lib/withApollo'
 
-import 'antd/dist/antd.less'
-import '../assets/body.less'
 import { ApolloClient } from 'apollo-boost';
 
 

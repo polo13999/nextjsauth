@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react'
+import React, { useState, useEffect, createContext, Component } from 'react'
 import { Layout, Menu, Button } from 'antd';
 import MenuBlock from './memu';
 import GlobalContext from '../provider/globalProvider'
@@ -23,15 +23,10 @@ const LayoutTemplate = (props) => {
         return (
             <GlobalContext.Provider value={{ globalState, setGlobalState, ...props, loginInfo, loginId }}>
                 <Layout style={{ "height": "100vh" }}>
-                    <Sider trigger={null} collapsible collapsed={menuState.collapsed}><div className="logo" /><MenuBlock /></Sider>
+                    {/* <Sider trigger={null} collapsible collapsed={menuState.collapsed}><div className="logo" /><MenuBlock /></Sider> */}
                     <Layout>
-                        <Header style={{ background: '#fff', padding: 0 }}>
-                            <Button icon={<ColumnWidthOutlined />} onClick={() => setMenuState({ collapsed: !menuState.collapsed })} />
-                        </Header>
                         <Content >
-                            <div >
-                                123
-                            </div>
+                            {children}
                         </Content>
                     </Layout>
                 </Layout>

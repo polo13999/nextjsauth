@@ -1,6 +1,5 @@
 import React from 'react'
 import cookie from 'cookie'
-import PropTypes from 'prop-types'
 import { getDataFromTree } from 'react-apollo'
 import Head from 'next/head'
 

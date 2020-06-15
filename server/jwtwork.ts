@@ -6,17 +6,14 @@ const jwtwork = async (req: any) => {
 
 
     const tokenInfo = _.get(req, 'session.tokenInfo')
-    console.log('tokenInfo', tokenInfo);
+    console.log('  req    x------->>>>', req.session);
 
     if (tokenInfo) {
-        console.log('xxxxxxx');
-
         try {
             const jwtData: any = jwt.verify(tokenInfo, config.secret)
-            console.log('jwtData ----->', jwtData);
+            console.log('jwt驗證通過')
 
-            const { memberInfo } = jwtData
-            return { memberInfo }
+            return jwtData
         } catch (err) {
             console.log('err', 'jwt驗證不通過')
             return { userCode: null, userId: null }
