@@ -24,7 +24,7 @@ const index = (props) => {
         <div>
             {id ? <div>{data?.meQuery?.name} <LogoutForm /> </div> : <LoginForm />}
             <Divider />
-            <Button>Fb登入</Button>
+            <a href="https://clawfun.online/fblogin"><Button >Fb登入</Button></a>
             <Button>Google登入</Button>
 
         </div>

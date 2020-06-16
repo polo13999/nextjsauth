@@ -6,6 +6,7 @@
 /node_modules/
 /server/static/uploads
 /server/dist
+/server/config
 
 
  
